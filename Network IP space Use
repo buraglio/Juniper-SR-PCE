@@ -1,13 +1,16 @@
 Network Utilization
 
+IPv4
+
 100.64.0.0/24 Loopbacks
 172.16.0.0/24 PCE Connectivity
 
 
-10.1.1.0/30 vmx1 - vmx3
+10.1.1.0/30 vmx1 - vmx2
+10.1.1.4/30 vmx1 - vmx6
+10.1.1.8/30 vmx2 - vmx3
+
 10.1.1.16/30 vmx1 - vmx2
-10.1.1.4/30 vmx2 - vmx4
-10.1.1.8/30 vmx3 - vmx5
 10.1.1.12/30 vmx6 - vmx4
 10.1.1.20/30 vmx6 - vmx2
 10.1.1.24/30 vmx4 - vmx5
@@ -43,3 +46,24 @@ Routers
 172.16.0.1/24 vmx1 PCE Connectivity
 172.16.0.2/24 vmx2 PCE Connectivity
 172.16.0.254/24 vmx-pce PCE Connectivity
+
+
+IPv6
+
+2001:db8:293::/32
+
+Loopbacks
+
+2001:db8:293:1::1/128 vmx1
+2001:db8:293:1::2/128 vmx2
+2001:db8:293:1::3/128 vmx3
+2001:db8:293:1::4/128 vmx4
+2001:db8:293:1::5/128 vmx5
+2001:db8:293:1::6/128 vmx6
+2001:db8:293:1::7/128 vmx7
+
+
+Point to Point links
+
+2001:db8:293:293::2/127 vmx1 - vmx2
+2001:db8:293:293::4/127 vmx2 - vmx3

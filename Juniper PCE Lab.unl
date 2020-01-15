@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="Juniper PCE Lab" id="c59af7d5-1d03-4f47-ac5d-78dffeebe763" version="1" scripttimeout="300" countdown="0" lock="0" author="Nick Buraglio">
+  <description>Juniper PCE Lab</description>
+  <topology>
+    <nodes>
+      <node id="7" name="vMX-VFP1" type="qemu" template="vmxvfp" image="vmxvfp-19.1R1.6-domestic-VFP" console="telnet" cpu="3" cpulimit="0" ram="4096" ethernet="12" uuid="ba698941-969d-462f-a757-915098036f94" firstmac="50:06:00:07:00:00" delay="0" icon="JunipervQFXpfe.png" config="0" left="225" top="297">
+        <interface id="1" name="em1 / int" type="ethernet" network_id="1"/>
+        <interface id="2" name="em2 / ge-0/0/0" type="ethernet" network_id="7"/>
+        <interface id="3" name="em3 / ge-0/0/1" type="ethernet" network_id="12"/>
+        <interface id="11" name="em11 / ge-0/0/9" type="ethernet" network_id="13"/>
+      </node>
+      <node id="8" name="vMX-VFP2" type="qemu" template="vmxvfp" image="vmxvfp-19.1R1.6-domestic-VFP" console="telnet" cpu="3" cpulimit="0" ram="4096" ethernet="12" uuid="6b43964b-169d-4e22-adf4-c1e157a36daf" firstmac="50:06:00:08:00:00" delay="0" icon="JunipervQFXpfe.png" config="0" left="723" top="285">
+        <interface id="1" name="em1 / int" type="ethernet" network_id="2"/>
+        <interface id="2" name="em2 / ge-0/0/0" type="ethernet" network_id="7"/>
+        <interface id="3" name="em3 / ge-0/0/1" type="ethernet" network_id="8"/>
+        <interface id="11" name="em11 / ge-0/0/9" type="ethernet" network_id="13"/>
+      </node>
+      <node id="9" name="vMX-VFP3" type="qemu" template="vmxvfp" image="vmxvfp-19.1R1.6-domestic-VFP" console="telnet" cpu="3" cpulimit="0" ram="4096" ethernet="12" uuid="c11837b2-35a9-4abb-870c-3ee77b85332d" firstmac="50:06:00:09:00:00" delay="0" icon="JunipervQFXpfe.png" config="0" left="1587" top="297">
+        <interface id="1" name="em1 / int" type="ethernet" network_id="3"/>
+        <interface id="2" name="em2 / ge-0/0/0" type="ethernet" network_id="9"/>
+        <interface id="3" name="em3 / ge-0/0/1" type="ethernet" network_id="8"/>
+        <interface id="4" name="em4 / ge-0/0/2" type="ethernet" network_id="15"/>
+        <interface id="11" name="em11 / ge-0/0/9" type="ethernet" network_id="13"/>
+      </node>
+      <node id="10" name="vMX-VFP4" type="qemu" template="vmxvfp" image="vmxvfp-19.1R1.6-domestic-VFP" console="telnet" cpu="3" cpulimit="0" ram="4096" ethernet="12" uuid="1d931e78-01f6-4482-a1fa-8e4efe41951b" firstmac="50:06:00:0a:00:00" delay="0" icon="JunipervQFXpfe.png" config="0" left="1590" top="1038">
+        <interface id="1" name="em1 / int" type="ethernet" network_id="4"/>
+        <interface id="2" name="em2 / ge-0/0/0" type="ethernet" network_id="9"/>
+        <interface id="3" name="em3 / ge-0/0/1" type="ethernet" network_id="10"/>
+        <interface id="5" name="em5 / ge-0/0/3" type="ethernet" network_id="16"/>
+        <interface id="11" name="em11 / ge-0/0/9" type="ethernet" network_id="13"/>
+      </node>
+      <node id="11" name="vMX-VFP5" type="qemu" template="vmxvfp" image="vmxvfp-19.1R1.6-domestic-VFP" console="telnet" cpu="3" cpulimit="0" ram="4096" ethernet="12" uuid="1e7958cd-9a94-440c-93c4-28e039227b5f" firstmac="50:06:00:0b:00:00" delay="0" icon="JunipervQFXpfe.png" config="0" left="735" top="1050">
+        <interface id="1" name="em1 / int" type="ethernet" network_id="5"/>
+        <interface id="2" name="em2 / ge-0/0/0" type="ethernet" network_id="11"/>
+        <interface id="3" name="em3 / ge-0/0/1" type="ethernet" network_id="10"/>
+        <interface id="11" name="em11 / ge-0/0/9" type="ethernet" network_id="13"/>
+      </node>
+      <node id="12" name="vMX-VFP6" type="qemu" template="vmxvfp" image="vmxvfp-19.1R1.6-domestic-VFP" console="telnet" cpu="3" cpulimit="0" ram="4096" ethernet="12" uuid="8a890318-708b-4de5-8d77-472860a92903" firstmac="50:06:00:0c:00:00" delay="0" icon="JunipervQFXpfe.png" config="0" left="219" top="1035">
+        <interface id="1" name="em1 / int" type="ethernet" network_id="6"/>
+        <interface id="2" name="em2 / ge-0/0/0" type="ethernet" network_id="11"/>
+        <interface id="3" name="em3 / ge-0/0/1" type="ethernet" network_id="12"/>
+        <interface id="11" name="em11 / ge-0/0/9" type="ethernet" network_id="13"/>
+      </node>
+      <node id="1" name="vMX-VCP1" type="qemu" template="vmxvcp" image="vmxvcp-19.1R1.6-domestic-VCP" console="telnet" cpu="2" cpulimit="0" ram="2048" ethernet="2" uuid="99f5fa50-304e-49e9-8fae-ddc332b61bfd" firstmac="50:06:00:01:00:00" delay="0" icon="JuniperMX.png" config="0" left="225" top="156">
+        <interface id="1" name="em1 / int" type="ethernet" network_id="1"/>
+      </node>
+      <node id="2" name="vMX-VCP2" type="qemu" template="vmxvcp" image="vmxvcp-19.1R1.6-domestic-VCP" console="telnet" cpu="2" cpulimit="0" ram="2048" ethernet="2" uuid="63e5ca6f-808e-4240-8148-f1cbca3f6967" firstmac="50:06:00:02:00:00" delay="0" icon="JuniperMX.png" config="0" left="720" top="144">
+        <interface id="1" name="em1 / int" type="ethernet" network_id="2"/>
+      </node>
+      <node id="3" name="vMX-VCP3" type="qemu" template="vmxvcp" image="vmxvcp-19.1R1.6-domestic-VCP" console="telnet" cpu="2" cpulimit="0" ram="2048" ethernet="2" uuid="9fbc8dcc-6824-475c-a634-95cbf643fb93" firstmac="50:06:00:03:00:00" delay="0" icon="JuniperMX.png" config="0" left="1587" top="165">
+        <interface id="1" name="em1 / int" type="ethernet" network_id="3"/>
+      </node>
+      <node id="4" name="vMX-VCP4" type="qemu" template="vmxvcp" image="vmxvcp-19.1R1.6-domestic-VCP" console="telnet" cpu="2" cpulimit="0" ram="2048" ethernet="2" uuid="70b84e92-93fc-4f9d-aab4-62d9c3e2edc6" firstmac="50:06:00:04:00:00" delay="0" icon="JuniperMX.png" config="0" left="1587" top="1194">
+        <interface id="1" name="em1 / int" type="ethernet" network_id="4"/>
+      </node>
+      <node id="5" name="vMX-VCP5" type="qemu" template="vmxvcp" image="vmxvcp-19.1R1.6-domestic-VCP" console="telnet" cpu="2" cpulimit="0" ram="2048" ethernet="2" uuid="9253197f-079b-496d-ab46-052bc20072fe" firstmac="50:06:00:05:00:00" delay="0" icon="JuniperMX.png" config="0" left="738" top="1185">
+        <interface id="1" name="em1 / int" type="ethernet" network_id="5"/>
+      </node>
+      <node id="6" name="vMX-VCP6" type="qemu" template="vmxvcp" image="vmxvcp-19.1R1.6-domestic-VCP" console="telnet" cpu="2" cpulimit="0" ram="2048" ethernet="2" uuid="ea10aa4e-eb12-48e1-9ca7-af449599161c" firstmac="50:06:00:06:00:00" delay="0" icon="JuniperMX.png" config="0" left="219" top="1176">
+        <interface id="1" name="em1 / int" type="ethernet" network_id="6"/>
+      </node>
+      <node id="13" name="vMX-VCP7" type="qemu" template="vmxvcp" image="vmxvcp-19.1R1.6-domestic-VCP" console="telnet" cpu="2" cpulimit="0" ram="2048" ethernet="2" uuid="c2c34f42-63ed-4678-8ff2-a0de84aecfa6" firstmac="50:06:00:0d:00:00" delay="0" icon="JuniperMX.png" config="0" left="1893" top="531">
+        <interface id="1" name="em1 / int" type="ethernet" network_id="14"/>
+      </node>
+      <node id="14" name="vMX-VFP7" type="qemu" template="vmxvfp" image="vmxvfp-19.1R1.6-domestic-VFP" console="telnet" cpu="3" cpulimit="0" ram="4096" ethernet="12" uuid="5168753c-e2f3-4668-ac61-d635eb1ad538" firstmac="50:06:00:0e:00:00" delay="0" icon="JunipervQFXpfe.png" config="0" left="1884" top="663">
+        <interface id="1" name="em1 / int" type="ethernet" network_id="14"/>
+        <interface id="4" name="em4 / ge-0/0/2" type="ethernet" network_id="15"/>
+        <interface id="5" name="em5 / ge-0/0/3" type="ethernet" network_id="16"/>
+        <interface id="11" name="em11 / ge-0/0/9" type="ethernet" network_id="13"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="1" type="bridge" name="Net-vMX-VFP7iface_1" left="285" top="508" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="2" type="bridge" name="Net-vMX-VFP8iface_1" left="690" top="295" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="3" type="bridge" name="Net-vMX-VFP9iface_1" left="1314" top="349" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="4" type="bridge" name="Net-vMX-VFP10iface_1" left="1227" top="835" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="5" type="bridge" name="Net-vMX-VFP11iface_1" left="783" top="1198" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="6" type="bridge" name="Net-vMX-VFP12iface_1" left="351" top="949" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="7" type="bridge" name="Net-vMX-VFP1iface_2" left="285" top="508" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="8" type="bridge" name="Net-vMX-VFP2iface_3" left="690" top="337" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="9" type="bridge" name="Net-vMX-VFP3iface_2" left="1311" top="376" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="10" type="bridge" name="Net-vMX-VFP4iface_3" left="1359" top="754" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="11" type="bridge" name="Net-vMX-VFP5iface_2" left="783" top="1210" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="12" type="bridge" name="Net-vMX-VFP6iface_3" left="357" top="955" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="13" type="pnet1" name="PCENet-VLAN4005" left="708" top="663" style="Solid" linkstyle="Straight" color="" label="" visibility="1"/>
+      <network id="14" type="bridge" name="Net-vMX-VFP7iface_1" left="840" top="718" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="15" type="bridge" name="Net-vMX-VFP7iface_4" left="1251" top="694" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+      <network id="16" type="bridge" name="Net-vMX-VFP7iface_5" left="1260" top="706" style="Solid" linkstyle="Straight" color="" label="" visibility="0"/>
+    </networks>
+  </topology>
+  <objects>
+    <textobjects>
+      <textobject id="2" name="Node 2" type="square">
+        <data>PGRpdiBpZD0iY3VzdG9tU2hhcGUyIiBjbGFzcz0iY3VzdG9tU2hhcGUgY29udGV4dC1tZW51IGp0ay1kcmFnZ2FibGUgdWktcmVzaXphYmxlIHVpLXNlbGVjdGVlIHVpLXNlbGVjdGVkIGp0ay1kcmFnLXNlbGVjdGVkIGZyZWUtc2VsZWN0ZWQgZHJhZ3N0b3BwZWQiIGRhdGEtcGF0aD0iMiIgc3R5bGU9ImRpc3BsYXk6IGlubGluZTsgei1pbmRleDogOTk5OyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDE3NHB4OyB0b3A6IDEyM3B4OyB3aWR0aDogYXV0bzsgaGVpZ2h0OiBhdXRvOyIgbmFtZT0iTm9kZSAyIj48c3ZnIHdpZHRoPSIyODAiIGhlaWdodD0iMjg2Ij48cmVjdCB4PSI1IiB5PSI1IiByeD0iMjAiIHJ5PSIyMCIgd2lkdGg9IjI3MCIgaGVpZ2h0PSIyNzYiIGZpbGw9IiNlOWU5ZTkiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlPSIjMDAwMDAwIj48L3JlY3Q+U29ycnksIHlvdXIgYnJvd3NlciBkb2VzIG5vdCBzdXBwb3J0IGlubGluZSBTVkcuPC9zdmc+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtZSIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtcyIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtc2UgdWktaWNvbiB1aS1pY29uLWdyaXBzbWFsbC1kaWFnb25hbC1zZSIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PC9kaXY+</data>
+      </textobject>
+      <textobject id="1" name="Node 2" type="square">
+        <data>PGRpdiBpZD0iY3VzdG9tU2hhcGUxIiBjbGFzcz0iY3VzdG9tU2hhcGUgY29udGV4dC1tZW51IGp0ay1kcmFnZ2FibGUgdWktcmVzaXphYmxlIHVpLXNlbGVjdGVlIHVpLXNlbGVjdGVkIGp0ay1kcmFnLXNlbGVjdGVkIGZyZWUtc2VsZWN0ZWQgZHJhZ3N0b3BwZWQiIGRhdGEtcGF0aD0iMSIgc3R5bGU9ImRpc3BsYXk6IGlubGluZTsgei1pbmRleDogOTk5OyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDY3MnB4OyB0b3A6IDExMXB4OyB3aWR0aDogYXV0bzsgaGVpZ2h0OiBhdXRvOyIgbmFtZT0iTm9kZSAyIj48c3ZnIHdpZHRoPSIyODAiIGhlaWdodD0iMjg2Ij48cmVjdCB4PSI1IiB5PSI1IiByeD0iMjAiIHJ5PSIyMCIgd2lkdGg9IjI3MCIgaGVpZ2h0PSIyNzYiIGZpbGw9IiNlOWU5ZTkiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlPSIjMDAwMDAwIj48L3JlY3Q+U29ycnksIHlvdXIgYnJvd3NlciBkb2VzIG5vdCBzdXBwb3J0IGlubGluZSBTVkcuPC9zdmc+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtZSIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtcyIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtc2UgdWktaWNvbiB1aS1pY29uLWdyaXBzbWFsbC1kaWFnb25hbC1zZSIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PC9kaXY+</data>
+      </textobject>
+      <textobject id="3" name="Node 2" type="square">
+        <data>PGRpdiBpZD0iY3VzdG9tU2hhcGUzIiBjbGFzcz0iY3VzdG9tU2hhcGUgY29udGV4dC1tZW51IGp0ay1kcmFnZ2FibGUgdWktcmVzaXphYmxlIHVpLXNlbGVjdGVlIGRyYWdzdG9wcGVkIHVpLXNlbGVjdGVkIGp0ay1kcmFnLXNlbGVjdGVkIGZyZWUtc2VsZWN0ZWQiIGRhdGEtcGF0aD0iMyIgc3R5bGU9ImRpc3BsYXk6IGlubGluZTsgei1pbmRleDogOTk5OyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDE1MjdweDsgdG9wOiAxMjlweDsgd2lkdGg6IGF1dG87IGhlaWdodDogYXV0bzsiIG5hbWU9Ik5vZGUgMiI+PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjI4NiI+PHJlY3QgeD0iNSIgeT0iNSIgcng9IjIwIiByeT0iMjAiIHdpZHRoPSIyNzAiIGhlaWdodD0iMjc2IiBmaWxsPSIjZTllOWU5IiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZT0iIzAwMDAwMCI+PC9yZWN0PlNvcnJ5LCB5b3VyIGJyb3dzZXIgZG9lcyBub3Qgc3VwcG9ydCBpbmxpbmUgU1ZHLjwvc3ZnPjxkaXYgY2xhc3M9InVpLXJlc2l6YWJsZS1oYW5kbGUgdWktcmVzaXphYmxlLWUiIHN0eWxlPSJ6LWluZGV4OiA5MDsiPjwvZGl2PjxkaXYgY2xhc3M9InVpLXJlc2l6YWJsZS1oYW5kbGUgdWktcmVzaXphYmxlLXMiIHN0eWxlPSJ6LWluZGV4OiA5MDsiPjwvZGl2PjxkaXYgY2xhc3M9InVpLXJlc2l6YWJsZS1oYW5kbGUgdWktcmVzaXphYmxlLXNlIHVpLWljb24gdWktaWNvbi1ncmlwc21hbGwtZGlhZ29uYWwtc2UiIHN0eWxlPSJ6LWluZGV4OiA5MDsiPjwvZGl2PjwvZGl2Pg==</data>
+      </textobject>
+      <textobject id="4" name="Node 2" type="square">
+        <data>PGRpdiBpZD0iY3VzdG9tU2hhcGU0IiBjbGFzcz0iY3VzdG9tU2hhcGUgY29udGV4dC1tZW51IGp0ay1kcmFnZ2FibGUgdWktc2VsZWN0ZWUganRrLWRyYWctc2VsZWN0ZWQgdWktcmVzaXphYmxlIHVpLXNlbGVjdGVkIGZyZWUtc2VsZWN0ZWQgZHJhZ3N0b3BwZWQiIGRhdGEtcGF0aD0iNCIgc3R5bGU9ImRpc3BsYXk6IGlubGluZTsgei1pbmRleDogOTk5OyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDE0MjJweDsgdG9wOiA5OTNweDsgd2lkdGg6IGF1dG87IGhlaWdodDogYXV0bzsiIG5hbWU9Ik5vZGUgMiI+PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjI4NiI+PHJlY3QgeD0iNSIgeT0iNSIgcng9IjIwIiByeT0iMjAiIHdpZHRoPSIyNzAiIGhlaWdodD0iMjc2IiBmaWxsPSIjZTllOWU5IiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZT0iIzAwMDAwMCI+PC9yZWN0PlNvcnJ5LCB5b3VyIGJyb3dzZXIgZG9lcyBub3Qgc3VwcG9ydCBpbmxpbmUgU1ZHLjwvc3ZnPjxkaXYgY2xhc3M9InVpLXJlc2l6YWJsZS1oYW5kbGUgdWktcmVzaXphYmxlLWUiIHN0eWxlPSJ6LWluZGV4OiA5MDsiPjwvZGl2PjxkaXYgY2xhc3M9InVpLXJlc2l6YWJsZS1oYW5kbGUgdWktcmVzaXphYmxlLXMiIHN0eWxlPSJ6LWluZGV4OiA5MDsiPjwvZGl2PjxkaXYgY2xhc3M9InVpLXJlc2l6YWJsZS1oYW5kbGUgdWktcmVzaXphYmxlLXNlIHVpLWljb24gdWktaWNvbi1ncmlwc21hbGwtZGlhZ29uYWwtc2UiIHN0eWxlPSJ6LWluZGV4OiA5MDsiPjwvZGl2PjwvZGl2Pg==</data>
+      </textobject>
+      <textobject id="5" name="Node 2" type="square">
+        <data>PGRpdiBpZD0iY3VzdG9tU2hhcGU1IiBjbGFzcz0iY3VzdG9tU2hhcGUgY29udGV4dC1tZW51IGp0ay1kcmFnZ2FibGUgdWktcmVzaXphYmxlIHVpLXNlbGVjdGVlIHVpLXNlbGVjdGVkIGp0ay1kcmFnLXNlbGVjdGVkIGZyZWUtc2VsZWN0ZWQgZHJhZ3N0b3BwZWQiIGRhdGEtcGF0aD0iNSIgc3R5bGU9ImRpc3BsYXk6IGlubGluZTsgei1pbmRleDogOTk5OyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDY5MHB4OyB0b3A6IDk4NHB4OyB3aWR0aDogYXV0bzsgaGVpZ2h0OiBhdXRvOyIgbmFtZT0iTm9kZSAyIj48c3ZnIHdpZHRoPSIyODAiIGhlaWdodD0iMjg2Ij48cmVjdCB4PSI1IiB5PSI1IiByeD0iMjAiIHJ5PSIyMCIgd2lkdGg9IjI3MCIgaGVpZ2h0PSIyNzYiIGZpbGw9IiNlOWU5ZTkiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlPSIjMDAwMDAwIj48L3JlY3Q+U29ycnksIHlvdXIgYnJvd3NlciBkb2VzIG5vdCBzdXBwb3J0IGlubGluZSBTVkcuPC9zdmc+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtZSIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtcyIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtc2UgdWktaWNvbiB1aS1pY29uLWdyaXBzbWFsbC1kaWFnb25hbC1zZSIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PC9kaXY+</data>
+      </textobject>
+      <textobject id="6" name="Node 2" type="square">
+        <data>PGRpdiBpZD0iY3VzdG9tU2hhcGU2IiBjbGFzcz0iY3VzdG9tU2hhcGUgY29udGV4dC1tZW51IGp0ay1kcmFnZ2FibGUgdWktcmVzaXphYmxlIHVpLXNlbGVjdGVlIHVpLXNlbGVjdGVkIGp0ay1kcmFnLXNlbGVjdGVkIGZyZWUtc2VsZWN0ZWQgZHJhZ3N0b3BwZWQiIGRhdGEtcGF0aD0iNiIgc3R5bGU9ImRpc3BsYXk6IGlubGluZTsgei1pbmRleDogOTk5OyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDE5NXB4OyB0b3A6IDk4MXB4OyB3aWR0aDogYXV0bzsgaGVpZ2h0OiBhdXRvOyIgbmFtZT0iTm9kZSAyIj48c3ZnIHdpZHRoPSIyODAiIGhlaWdodD0iMjg2Ij48cmVjdCB4PSI1IiB5PSI1IiByeD0iMjAiIHJ5PSIyMCIgd2lkdGg9IjI3MCIgaGVpZ2h0PSIyNzYiIGZpbGw9IiNlOWU5ZTkiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlPSIjMDAwMDAwIj48L3JlY3Q+U29ycnksIHlvdXIgYnJvd3NlciBkb2VzIG5vdCBzdXBwb3J0IGlubGluZSBTVkcuPC9zdmc+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtZSIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtcyIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtc2UgdWktaWNvbiB1aS1pY29uLWdyaXBzbWFsbC1kaWFnb25hbC1zZSIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PC9kaXY+</data>
+      </textobject>
+      <textobject id="7" name="Node 2" type="square">
+        <data>PGRpdiBpZD0iY3VzdG9tU2hhcGU3IiBjbGFzcz0iY3VzdG9tU2hhcGUgY29udGV4dC1tZW51IGp0ay1kcmFnZ2FibGUgdWktc2VsZWN0ZWUganRrLWRyYWctc2VsZWN0ZWQgdWktcmVzaXphYmxlIHVpLXNlbGVjdGVkIGZyZWUtc2VsZWN0ZWQgZHJhZ3N0b3BwZWQiIGRhdGEtcGF0aD0iNyIgc3R5bGU9ImRpc3BsYXk6IGlubGluZTsgei1pbmRleDogOTk5OyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDE4MzZweDsgdG9wOiA0ODlweDsgd2lkdGg6IDI4OHB4OyBoZWlnaHQ6IDI5OHB4OyIgbmFtZT0iTm9kZSAyIj48c3ZnIHdpZHRoPSIyODAiIGhlaWdodD0iMjg2Ij48cmVjdCB4PSI1IiB5PSI1IiByeD0iMjAiIHJ5PSIyMCIgd2lkdGg9IjI3MCIgaGVpZ2h0PSIyNzYiIGZpbGw9IiNlOWU5ZTkiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlPSIjMDAwMDAwIj48L3JlY3Q+U29ycnksIHlvdXIgYnJvd3NlciBkb2VzIG5vdCBzdXBwb3J0IGlubGluZSBTVkcuPC9zdmc+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtZSIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtcyIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtc2UgdWktaWNvbiB1aS1pY29uLWdyaXBzbWFsbC1kaWFnb25hbC1zZSIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PC9kaXY+</data>
+      </textobject>
+    </textobjects>
+  </objects>
+</lab>

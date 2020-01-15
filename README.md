@@ -6,7 +6,7 @@ Included here are the Test configurations for PCE testing with Juniper JunOS as 
 ### Files and such
 
 1. vmx* Juniper vmx configuration files as stored in the flash. Also usable in the "startup configuration" section of Eve-NG
-2. Nokia PCE Lab.unl - the Eve-NG XML file that is the lab
+2. Juniper PCE Lab.unl - the Eve-NG XML file that is the lab
 
 
 ### Diagrams and physical layout

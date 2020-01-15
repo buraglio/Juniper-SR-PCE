@@ -9,15 +9,15 @@ IPv4
 10.1.1.0/30 vmx1 - vmx2
 10.1.1.4/30 vmx1 - vmx6
 10.1.1.8/30 vmx2 - vmx3
+10.1.1.12/30 vmx3 - vmx4
+10.1.1.16/30 vmx3 - vmx7
 
-10.1.1.16/30 vmx1 - vmx2
-10.1.1.12/30 vmx6 - vmx4
 10.1.1.20/30 vmx6 - vmx2
 10.1.1.24/30 vmx4 - vmx5
 10.1.1.252/30 vmx-pce - vmx1
 
 10.4.5.0/24 data plane
-172.16.0.0/24 control plane
+172.22.0.0/24 control plane
 
 Data Plane:
 Side A -
@@ -67,3 +67,7 @@ Point to Point links
 
 2001:db8:293:293::2/127 vmx1 - vmx2
 2001:db8:293:293::4/127 vmx2 - vmx3
+
+
+Control plane
+2001:db8:293:b33f::/64

@@ -1,6 +1,6 @@
 set version 20190319.203446_builder.r1013243
-set system root-authentication encrypted-password "$6$Aj826hMz$MdnBtpczUCDJCI.B.kMR29d2G4uKBr
-jszEyr3hMeiFfrSZAL7E57eaFIzHEKdWWmKRMn7Knz1JdKtNBpYJ3cR."
+set system root-authentication encrypted-password "$6$P2g0uKz3$37e.1UwWe5vezGBw0JjRZ.7a7I81u58IWhf1AUxUrqjD/NXbRdjE6z59HJ
+mo9NH15i.HIhaPM.VxJCVcvinus."
 set system services ssh root-login allow
 set system services ssh protocol-version v2
 set system services ssh connection-limit 10
@@ -15,6 +15,7 @@ set system processes dhcp-service traceoptions file dhcp_logfile
 set system processes dhcp-service traceoptions file size 10m
 set system processes dhcp-service traceoptions level all
 set system processes dhcp-service traceoptions flag packet
+set chassis fpc 0 pic 0 interface-type ge
 set chassis network-services enhanced-ip
 set interfaces ge-0/0/0 description "vmx6 - vmx5"
 set interfaces ge-0/0/0 unit 0 family inet address 10.1.1.30/30
@@ -28,10 +29,24 @@ set interfaces ge-0/0/9 description "PCE Control Plane"
 set interfaces ge-0/0/9 unit 0 family inet address 172.22.0.6/24
 set interfaces ge-0/0/9 unit 0 family iso
 set interfaces ge-0/0/9 unit 0 family inet6 address 2001:db8:293:b33f::6/64
-set interfaces fxp0 unit 0 family inet dhcp vendor-id Juniper-vmx-VM5E1CE8AADA
+set interfaces fxp0 unit 0 family inet dhcp vendor-id Juniper-vmx-VM5E1CE8AD5F
 set interfaces lo0 unit 0 family inet address 100.64.0.6/32
 set interfaces lo0 unit 0 family iso address 49.0001.0010.0100.2936.00
 set interfaces lo0 unit 0 family inet6 address 2001:db8:293:1::6/128
+set protocols bgp group ibgp type internal
+set protocols bgp group ibgp local-address 100.64.0.6
+set protocols bgp group ibgp family inet any
+set protocols bgp group ibgp family inet-vpn unicast
+set protocols bgp group ibgp family inet6 any
+set protocols bgp group ibgp family inet6-vpn any
+set protocols bgp group ibgp peer-as 65505
+set protocols bgp group ibgp local-as 65505
+set protocols bgp group ibgp neighbor 100.64.0.1 description vmx1
+set protocols bgp group ibgp neighbor 100.64.0.2 description vmx2
+set protocols bgp group ibgp neighbor 100.64.0.3 description vmx3
+set protocols bgp group ibgp neighbor 100.64.0.4 description vmx4
+set protocols bgp group ibgp neighbor 100.64.0.7 description vmx7
+set protocols bgp group ibgp neighbor 100.64.0.5 description vmx5
 set protocols isis source-packet-routing srgb start-label 400000
 set protocols isis source-packet-routing srgb index-range 4000
 set protocols isis source-packet-routing node-segment ipv4-index 2001
@@ -40,6 +55,7 @@ set protocols isis level 1 disable
 set protocols isis interface ge-0/0/0.0
 set protocols isis interface ge-0/0/1.0
 set protocols isis interface ge-0/0/9.0
+set protocols isis interface lo0.0
 set protocols mpls interface ge-0/0/0.0
 set protocols mpls interface ge-0/0/9.0
 set protocols mpls interface ge-0/0/1.0

@@ -1,6 +1,6 @@
 set version 20190319.203446_builder.r1013243
-set system root-authentication encrypted-password "$6$Aj826hMz$MdnBtpczUCDJCI.B.kMR29d2G4uKBr
-jszEyr3hMeiFfrSZAL7E57eaFIzHEKdWWmKRMn7Knz1JdKtNBpYJ3cR."
+set system root-authentication encrypted-password "$6$l4VKChLp$PGcnfiP27nwSeKTIhtiftLV0ZbUFNxgE.1xu0Cgusx2sM0AzaY5
+rRjJqZk7zxuH2kFi4mkG9udNjGq1Mdt8Il/"
 set system services ssh root-login allow
 set system services ssh protocol-version v2
 set system services ssh connection-limit 10
@@ -32,6 +32,20 @@ set interfaces fxp0 unit 0 family inet dhcp vendor-id Juniper-vmx-VM5E1CE8AADA
 set interfaces lo0 unit 0 family inet address 100.64.0.2/32
 set interfaces lo0 unit 0 family iso address 49.0001.0010.0100.2932.00
 set interfaces lo0 unit 0 family inet6 address 2001:db8:293:1::2/128
+set protocols bgp group ibgp type internal
+set protocols bgp group ibgp local-address 100.64.0.2
+set protocols bgp group ibgp family inet any
+set protocols bgp group ibgp family inet-vpn unicast
+set protocols bgp group ibgp family inet6 any
+set protocols bgp group ibgp family inet6-vpn any
+set protocols bgp group ibgp peer-as 65505
+set protocols bgp group ibgp local-as 65505
+set protocols bgp group ibgp neighbor 100.64.0.1 description vmx1
+set protocols bgp group ibgp neighbor 100.64.0.3 description vmx3
+set protocols bgp group ibgp neighbor 100.64.0.4 description vmx4
+set protocols bgp group ibgp neighbor 100.64.0.5 description vmx5
+set protocols bgp group ibgp neighbor 100.64.0.7 description vmx7
+set protocols bgp group ibgp neighbor 100.64.0.6 description vmx6
 set protocols isis source-packet-routing srgb start-label 400000
 set protocols isis source-packet-routing srgb index-range 4000
 set protocols isis source-packet-routing node-segment ipv4-index 2001
@@ -40,6 +54,7 @@ set protocols isis level 1 disable
 set protocols isis interface ge-0/0/0.0
 set protocols isis interface ge-0/0/1.0
 set protocols isis interface ge-0/0/9.0
+set protocols isis interface lo0.0
 set protocols mpls interface ge-0/0/0.0
 set protocols mpls interface ge-0/0/9.0
 set protocols mpls interface ge-0/0/1.0

@@ -17,4 +17,4 @@ The physical topology inside of eve-ng that comprises the test network looks rou
 ![Virtual Router Topology](https://github.com/buraglio/Juniper-SR-PCE/blob/master/PCE%20Eve-NG%20Test%20Topology.png "Virtual Router Topology")
 
 The physical topology inside of eve-ng that comprises the test network looks roughly like this.  
-![Physical Router Topology](https://github.com/buraglio/Nokia-SR-PCE/blob/master/netlab-virtlab-sr-virtualnet-juniper.png?raw=true "Physical Router Topology")
+![Physical Router Topology](https://raw.githubusercontent.com/buraglio/Juniper-SR-PCE/master/netlab-virtlab-sr-virtualnet-juniper.png "Physical Router Topology")

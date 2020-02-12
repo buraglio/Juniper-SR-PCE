@@ -1,6 +1,5 @@
-set version 20190319.203446_builder.r1013243
-set system root-authentication encrypted-password "$6$l4VKChLp$PGcnfiP27nwSeKTIhtiftLV0ZbUFNxgE.1xu0Cgusx2sM0AzaY5
-rRjJqZk7zxuH2kFi4mkG9udNjGq1Mdt8Il/"
+et version 20190319.203446_builder.r1013243
+set system root-authentication encrypted-password "$6$l4VKChLp$PGcnfiP27nwSeKTIhtiftLV0ZbUFNxgE.1xu0Cgusx2sM0AzaY5rRjJqZk7zxuH2kFi4mkG9udNjGq1Mdt8Il/"
 set system services ssh root-login allow
 set system services ssh protocol-version v2
 set system services ssh connection-limit 10
@@ -55,7 +54,14 @@ set protocols isis interface ge-0/0/0.0
 set protocols isis interface ge-0/0/1.0
 set protocols isis interface ge-0/0/9.0
 set protocols isis interface lo0.0
+set protocols mpls lsp-external-controller pccd
 set protocols mpls interface ge-0/0/0.0
 set protocols mpls interface ge-0/0/9.0
 set protocols mpls interface ge-0/0/1.0
 set protocols lldp interface all
+set protocols pcep pce northstar1 local-address 172.22.0.2
+set protocols pcep pce northstar1 destination-ipv4-address 172.22.0.254
+set protocols pcep pce northstar1 destination-port 4189
+set protocols pcep pce northstar1 pce-type active
+set protocols pcep pce northstar1 pce-type stateful
+set protocols pcep pce northstar1 lsp-provisioning

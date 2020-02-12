@@ -1,6 +1,5 @@
 set version 20190319.203446_builder.r1013243
-set system root-authentication encrypted-password "$6$Aj826hMz$MdnBtpczUCDJCI.B.kMR29d2G4uKBrjszEyr3hMeiFfrSZAL7E57
-eaFIzHEKdWWmKRMn7Knz1JdKtNBpYJ3cR."
+set system root-authentication encrypted-password "$6$Aj826hMz$MdnBtpczUCDJCI.B.kMR29d2G4uKBrjszEyr3hMeiFfrSZAL7E57eaFIzHEKdWWmKRMn7Knz1JdKtNBpYJ3cR."
 set system services ssh root-login allow
 set system services ssh protocol-version v2
 set system services ssh connection-limit 10
@@ -33,6 +32,9 @@ set interfaces fxp0 unit 0 family inet dhcp vendor-id Juniper-vmx-VM5E1CE8AADA
 set interfaces lo0 unit 0 family inet address 100.64.0.1/32
 set interfaces lo0 unit 0 family iso address 49.0001.0010.0100.2931.00
 set interfaces lo0 unit 0 family inet6 address 2001:db8:293:1::1/128
+set policy-options policy-statement TE term 1 from family traffic-engineering
+set policy-options policy-statement TE term 1 then accept
+set routing-options autonomous-system 65505
 set protocols bgp group ibgp type internal
 set protocols bgp group ibgp local-address 100.64.0.1
 set protocols bgp group ibgp family inet any
@@ -47,6 +49,12 @@ set protocols bgp group ibgp neighbor 100.64.0.4 description vmx4
 set protocols bgp group ibgp neighbor 100.64.0.5 description vmx5
 set protocols bgp group ibgp neighbor 100.64.0.7 description vmx7
 set protocols bgp group ibgp neighbor 100.64.0.6 description vmx6
+set protocols bgp group bgp-te type internal
+set protocols bgp group bgp-te local-address 172.22.0.1
+set protocols bgp group bgp-te peer-as 65505
+set protocols bgp group bgp-te local-as 65505
+set protocols bgp group bgp-te neighbor 172.22.0.253 family traffic-engineering unicast
+set protocols bgp group bgp-te neighbor 172.22.0.253 export TE
 set protocols isis source-packet-routing srgb start-label 400000
 set protocols isis source-packet-routing srgb index-range 4000
 set protocols isis source-packet-routing node-segment ipv4-index 2001
@@ -56,7 +64,15 @@ set protocols isis interface ge-0/0/0.0
 set protocols isis interface ge-0/0/1.0
 set protocols isis interface ge-0/0/9.0
 set protocols isis interface lo0.0
+set protocols mpls lsp-external-controller pccd
+set protocols mpls traffic-engineering database import policy TE
 set protocols mpls interface ge-0/0/0.0
 set protocols mpls interface ge-0/0/9.0
 set protocols mpls interface ge-0/0/1.0
 set protocols lldp interface all
+set protocols pcep pce northstar1 local-address 172.22.0.1
+set protocols pcep pce northstar1 destination-ipv4-address 172.22.0.254
+set protocols pcep pce northstar1 destination-port 4189
+set protocols pcep pce northstar1 pce-type active
+set protocols pcep pce northstar1 pce-type stateful
+set protocols pcep pce northstar1 lsp-provisioning

@@ -51,10 +51,11 @@ set protocols isis source-packet-routing srgb index-range 4000
 set protocols isis source-packet-routing node-segment ipv4-index 2001
 set protocols isis source-packet-routing node-segment ipv6-index 3001
 set protocols isis level 1 disable
-set protocols isis interface ge-0/0/0.0
-set protocols isis interface ge-0/0/1.0
+set protocols isis level 2 wide-metrics-only
+set protocols isis interface ge-0/0/0.0 point-to-point
+set protocols isis interface ge-0/0/1.0 point-to-point
 set protocols isis interface ge-0/0/9.0
-set protocols isis interface lo0.0
+set protocols isis interface lo0.0 passive
 set protocols mpls lsp-external-controller pccd
 set protocols mpls interface ge-0/0/0.0
 set protocols mpls interface ge-0/0/9.0

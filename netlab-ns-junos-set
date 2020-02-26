@@ -20,8 +20,9 @@ set protocols bgp group bgp-te local-address 172.22.0.253
 set protocols bgp group bgp-te family traffic-engineering unicast
 set protocols bgp group bgp-te neighbor 172.22.0.1
 set protocols isis level 1 disable
+set protocols isis interface em0.0 disable
 set protocols isis interface em0.0 level 2 metric 100
-set protocols isis interface lo0.0
+set protocols isis interface lo0.0 disable
 set protocols topology-export
 set protocols mpls interface em0.0
 set protocols lldp interface all

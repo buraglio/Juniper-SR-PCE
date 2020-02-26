@@ -1,9 +1,13 @@
 set version 20190319.203446_builder.r1013243
+set system login user northstar uid 2000
+set system login user northstar class super-user
+set system login user northstar authentication encrypted-password "$6$hlCNb0cx$rgU30tkFY.LrJQnYfu08Zkxmc/CzvBMwdm5JMVwP0L5a/EPxjNbXs19/BvlZqmLX35N9/6HAHqzwJ27DJj5jO/"
 set system root-authentication encrypted-password "$6$l4VKChLp$PGcnfiP27nwSeKTIhtiftLV0ZbUFNxgE.1xu0Cgusx2sM0AzaY5rRjJqZk7zxuH2kFi4mkG9udNjGq1Mdt8Il/"
 set system services ssh root-login allow
 set system services ssh protocol-version v2
 set system services ssh connection-limit 10
 set system services ssh rate-limit 15
+set system services netconf ssh
 set system host-name vmx2
 set system time-zone America/Chicago
 set system syslog user * any emergency
@@ -19,18 +23,20 @@ set interfaces ge-0/0/0 description "vmx2 - vmx1"
 set interfaces ge-0/0/0 unit 0 family inet address 10.1.1.2/30
 set interfaces ge-0/0/0 unit 0 family iso
 set interfaces ge-0/0/0 unit 0 family inet6 address 2001:db8:293:293::3/127
+set interfaces ge-0/0/0 unit 0 family mpls
 set interfaces ge-0/0/1 description "vmx2 - vmx3"
 set interfaces ge-0/0/1 unit 0 family inet address 10.1.1.9/30
 set interfaces ge-0/0/1 unit 0 family iso
 set interfaces ge-0/0/1 unit 0 family inet6 address 2001:db8:293:293::4/127
+set interfaces ge-0/0/1 unit 0 family mpls
 set interfaces ge-0/0/9 description "PCE Control Plane"
 set interfaces ge-0/0/9 unit 0 family inet address 172.22.0.2/24
-set interfaces ge-0/0/9 unit 0 family iso
 set interfaces ge-0/0/9 unit 0 family inet6 address 2001:db8:293:b33f::2/64
 set interfaces fxp0 unit 0 family inet dhcp vendor-id Juniper-vmx-VM5E1CE8AADA
 set interfaces lo0 unit 0 family inet address 100.64.0.2/32
 set interfaces lo0 unit 0 family iso address 49.0001.0010.0100.2932.00
 set interfaces lo0 unit 0 family inet6 address 2001:db8:293:1::2/128
+set snmp community Juniper clients 172.22.0.0/24
 set routing-options router-id 172.22.0.2
 set protocols bgp group ibgp type internal
 set protocols bgp group ibgp local-address 100.64.0.2
@@ -54,11 +60,11 @@ set protocols isis level 1 disable
 set protocols isis level 2 wide-metrics-only
 set protocols isis interface ge-0/0/0.0 point-to-point
 set protocols isis interface ge-0/0/1.0 point-to-point
-set protocols isis interface ge-0/0/9.0
 set protocols isis interface lo0.0 passive
+set protocols rsvp interface ge-0/0/1.0
+set protocols rsvp interface ge-0/0/0.0
 set protocols mpls lsp-external-controller pccd
 set protocols mpls interface ge-0/0/0.0
-set protocols mpls interface ge-0/0/9.0
 set protocols mpls interface ge-0/0/1.0
 set protocols source-packet-routing lsp-external-controller pccd
 set protocols lldp interface all
